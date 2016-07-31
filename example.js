@@ -177,7 +177,7 @@
     // of this function are of little interest.
     function buildTree() {
       var fs = {
-        bin: {'clear': {},'help': {},'history': {},'kill': {},'ls': {},'pwd': {}},
+        bin: {'clear': {},'help': {},'history': {},'kill': {},'ls': {},'pwd': {},'echo': {},'df': {}},
         boot: {},
         dev: {},
         etc: {
