@@ -1,1 +1,32 @@
-<meta http-equiv="refresh" content="0;URL=http://hiroki7v11-api.3eeweb.com/tc/terminal.html">
+  <script src="jquery.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script>Josh = {Debug: true };</script>
+  <script src="killring.js"></script>
+  <script src="history.js"></script>
+  <script src="readline.js"></script>
+  <script src="shell.js"></script>
+  <script src="pathhandler.js"></script>
+  <script src="example.js"></script>
+  <style type="text/css">
+    #shell-panel {
+      height: 93.6%;
+      width: 96.93%;
+      background-color: #002f05;
+      color: #00fe00;
+      padding: 20px 20px 20px 20px;
+      font-family: 'Source Code Pro';
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border: 1px dashed #E6EBE0;
+    }
+
+    #shell-cli .prompt {
+      font-weight: bold;
+    }</style>
+<div id="shell-panel" tabindex="0" class="ui-resizable">
+  <!--<div>Type <code>help</code> or hit <code>TAB</code> for a list of commands.
+  </div>-->
+  <div id="shell-view"><div id="shell-cli"><span class="prompt">/ $</span>&nbsp;<span class="input"><span class="left"></span><span class="cursor" style="text-decoration: underline;">&nbsp;</span><span class="right"></span></span></div></div>
+<div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div></div>
