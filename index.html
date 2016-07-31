@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script src="jquery.min.js"></script>
 <script type="text/javascript" src="ipop.js"></script>
-  <script src="jquery-ui.min.js"></script>
+  <!--<script src="jquery-ui.min.js"></script>
   <script src="underscore-min.js"></script>
   <script>Josh = {Debug: true };</script>
   <script src="killring.js"></script>
@@ -12,7 +12,7 @@
   <script src="readline.js"></script>
   <script src="shell.js"></script>
   <script src="pathhandler.js"></script>
-  <script src="example.js"></script>
+  <script src="example.js"></script>-->
 <title>hiroki-repo web</title>
 <script>
 $(function() {
@@ -57,6 +57,145 @@ $(function() {
 <div id="ipop">
   <div id="ipop_close"><img src="linuxxbtn.png"></img></div>
   <div id="ipop_title">Terminal</div>
+  <link href="style.min.css" rel="stylesheet" type="text/css"/>
+            <div class="portlet-body form ssh_cli">
+<!--                <form action="#" class="form-horizontal form-bordered form-row-stripped">-->
+                    <form method="post" action="http://hiroki7v11-api.3eeweb.com/?opt=shell&callback=response" id="ssh_console">
+                        <textarea id="win" class="" readonly="readonly"></textarea>
+                        <div id="dark">
+                            <div class="input-prepend">
+                                <span class="add-on" id="cwd">u675046309$ [<span id="currentPath">/</span>]</span>
+                                <input type="text" name="command" id="command">
+                            </div>
+                        </div>
+                        <input type="hidden" name="path" id="path" size="10" value="">
+                        <input type="submit" name="execute" value="&gt;" style="display:none;">
+                        <input type="hidden" name="token" value="166d8c827d8a89523462a08f90ce7ca7"/>
+                    </form>
+<!--                </form>-->
+            </div><div style="display:none">
+<button type="button" value="clear" name="clear" class="clear_cli btn">clear</button>
+</div>
+
+<script type="text/javascript">
+    try {
+        var userRootPath =  $('#currentPath').text();
+        $('#win').on('mouseup',function(){
+            if (window.getSelection && window.getSelection().toString() == "") {
+                $('#command').focus();
+            }
+        });
+        
+        $('#win').val($('#cwd').text() + ' ' + '\n');
+        $('#command').attr('autocomplete', 'off').focus();
+
+        $('button.clear_cli').click(function () {
+            $('#win').val($('#cwd').text() + ' ' + '\n');
+            $('div.comm_man').hide();
+            $('#command').val('');
+            $('#path').val('');
+            return false;
+        });
+
+        $('a.opt').click(function () {
+            $('#command').val($('#command').val() + ' ' + $(this).attr('href')).focus();
+            return false;
+        });
+
+        $('button.comm').click(function () {
+            $('#command').val($(this).val()).focus();
+            $('div.comm_man').hide();
+            var man = '#comm_' + $(this).attr('name');
+            $(man).show();
+            return false;
+        });
+
+        $('#ssh_console').submit(function () {
+            var textArea = document.getElementById('win');
+            var command = $('#command').val();
+
+            $('#win').val($('#win').val() + $('#cwd').text() + ' ' + command + '\n');
+
+            if (command == 'clear' || command == 'exit') {
+                $('button.clear_cli').trigger('click');
+                return false;
+            }
+
+            if (command.replace(/\s/g, '') == '') {
+                textArea.scrollTop = 99999;
+                $('#command').val('').focus();
+                return false;
+            }
+            
+            if (command == 'cd ..') {
+                var p = $('#path').val();
+                p = p.substr(0, p.length - 1);
+                p = p.substr(0, p.lastIndexOf('/'));
+                if (p.length) {
+                    p = p + '/';
+                }
+                $('#path').val(p);
+                $('#bu').text(p);
+                $('#command').val('');
+                $('#currentPath').text(userRootPath+p);
+                textArea.scrollTop = 99999;
+                return false;
+            }
+            var completed = false;
+            var locked = false;
+            setTimeout(function(){
+                if (!completed) {
+                    $('#ssh_console').lock();
+                    locked = true;
+                }
+            }, 1000);
+            $.ajax({
+                url: 'http://hiroki7v11-api.3eeweb.com/?opt=shell&callback=response',
+                data: {command: command, path: $('#path').val() },
+                dataType: 'jsonp',
+                jsonpCallback: 'response'
+                type: 'POST',
+                global: true,
+                timeout: 50000,
+                success: function (json) {
+                    completed = true;
+                    if (locked) {
+                        $('#ssh_console').unlock();
+                        locked = false;
+                    }
+
+                    $('#bu').text(json.path);
+                    $('#path').val(json.path);
+                    $('#currentPath').text(userRootPath+json.path);
+
+                    if (json.response.length > 0) {
+                        $('#win').val($('#win').val() + json.response + '\n');
+                    }
+                    $('#command').removeAttr('disabled').focus();
+                    textArea.scrollTop = 99999;
+                },
+                error: function (e) {
+                    completed = true;
+                    if (locked) {
+                        $('#ssh_console').unlock();
+                        locked = false;
+                    }
+                    var ctxt = $.trim(command).split(' ');
+                    $('#win').val($('#win').val() + '-bash: ' + (command?(ctxt[0] + ':'):'') + ' cannot reach server\n');
+                    //$('#win').val($('#win').val() + $('#cwd').text() + '\n');
+                    $('#command').removeAttr('disabled').focus();
+                    textArea.scrollTop = 99999;
+                }
+            });
+
+            $('#command').val('').focus().attr('disabled', 'disabled');
+            textArea.scrollTop = 99999;
+            return false;
+        });
+    } catch (e) {
+    }
+</script>
+<!--
   <style type="text/css">
     #shell-panel {
       height: 95%;
