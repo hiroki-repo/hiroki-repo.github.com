@@ -146,13 +146,7 @@ var Josh = Josh || {};
     
     function man(cmd, args, callback) {
       if(args[0]=="")
-      callback(_shell.templates.pwd({node: 'Filesystem           1K-blocks      Used Available Use% Mounted on
-/dev/sdb5             25879640  15985868   8579164  66% /
-tmpfs                  8155824      1476   8154348   1% /dev/shm
-/dev/sdb1               198337     69987    118110  38% /boot
-/dev/sda1            1921813332 1811672616 110140716  95% /home
-/dev/sdb3              4128448    167324   3751412   5% /tmp
-'}));
+      callback(_shell.templates.pwd({node: 'Filesystem           1K-blocks      Used Available Use% Mounted on\n\/dev\/sdb5             25879640  15986532   8578500  66% \/\ntmpfs                  8155824      1476   8154348   1% \/dev\/shm\n\/dev\/sdb1               198337     69987    118110  38% \/boot\n\/dev\/sda1            1921813332 1811678676 110134656  95% \/home\n\/dev\/sdb3              4128448    170800   3747936   5% \/tmp\n'}));
     }
 
     function ls(cmd, args, callback) {
