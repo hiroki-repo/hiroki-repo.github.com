@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<script src="jquery.min.js"></script>
+<script type="text/javascript" src="ipop.js"></script>
+<title>ポップアップウインドのウテスト</title>
+<script>
+$(function() {
+  $('#open').click(function() {$.ipop();});
+});
+</script>
+<style>
+#ipop {
+  padding: 0;
+  background-color: #fed;
+  border: 1px solid #aaa;
+
+  /* この５行は必須 */
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  display: none;
+  z-index: 9999;
+}
+
+#ipop_title {
+  background-color: #fdc;
+  cursor: move;
+}
+
+#ipop_close {
+  cursor: pointer;
+  float: right;
+}
+</style>
+</head>
+<body>
+<a href="javascript:void(0)" id="open">開く</a>
+
+<div id="ipop">
+  <div id="ipop_close"><img src="linuxxbtn.png"></img></div>
+  <div id="ipop_title">タイトル</div>
+  コンテンツ<br>
+  コンテンツ
+</div>
+
+</body>
+</html>
