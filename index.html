@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <script src="jquery.min.js"></script>
 <script type="text/javascript" src="ipop.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script>Josh = {Debug: true };</script>
+  <script src="killring.js"></script>
+  <script src="history.js"></script>
+  <script src="readline.js"></script>
+  <script src="shell.js"></script>
+  <script src="pathhandler.js"></script>
+  <script src="example.js"></script>
 <title>ポップアップウインドのウテスト</title>
 <script>
 $(function() {
@@ -13,8 +22,9 @@ $(function() {
 <style>
 #ipop {
   padding: 0;
-  background-color: #fed;
+  background-color: #fff;
   border: 1px solid #aaa;
+  color: #000000;
 
   /* この５行は必須 */
   width: 300px;
@@ -27,6 +37,7 @@ $(function() {
 #ipop_title {
   background-color: #111;
   cursor: move;
+  color: #fff;
 }
 
 #ipop_close {
@@ -40,9 +51,34 @@ $(function() {
 
 <div id="ipop">
   <div id="ipop_close"><img src="linuxxbtn.png"></img></div>
-  <div id="ipop_title">タイトル</div>
-  コンテンツ<br>
-  コンテンツ
+  <div id="ipop_title">Terminal</div>
+  <style type="text/css">
+    #shell-panel {
+      height: 93.6%;
+      width: 96.93%;
+      background-color: #002f05;
+      color: #00fe00;
+      padding: 20px 20px 20px 20px;
+      font-family: 'Source Code Pro';
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border: 1px dashed #E6EBE0;
+    }
+
+    #shell-cli .prompt {
+      font-weight: bold;
+    }</style>
+<div id="shell-panel" tabindex="0" class="ui-resizable">
+  <!--<div>Type <code>help</code> or hit <code>TAB</code> for a list of commands.
+  </div>-->
+  <div id="shell-view"><div id="shell-cli"><span class="prompt">/ $</span>&nbsp;<span class="input"><span class="left"></span><span class="cursor" style="text-decoration: underline;">&nbsp;</span><span class="right"></span></span></div></div>
+<div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div></div>
+
+</div>
+<!--<script type="text/javascript">
+document.write(login.toLocaleString());
+</script>-->
 </div>
 
 </body>
