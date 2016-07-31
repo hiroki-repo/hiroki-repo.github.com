@@ -26,6 +26,7 @@ var Josh = Josh || {};
     _shell.templates.not_found = _.template("<div><%=cmd%>: <%=path%>: No such file or directory</div>");
     _shell.templates.ls = _.template("<div><% _.each(nodes, function(node) { %><span><%=node.name%>&nbsp;</span><% }); %></div>");
     _shell.templates.pwd = _.template("<div><%=node.path %>&nbsp;</div>");
+    _shell.templates.df = _.template("<div><%="+'Filesystem           1K-blocks      Used Available Use% Mounted on\n\/dev\/sdb5             25879640  15986532   8578500  66% \/\ntmpfs                  8155824      1476   8154348   1% \/dev\/shm\n\/dev\/sdb1               198337     69987    118110  38% \/boot\n\/dev\/sda1            1921813332 1811678676 110134656  95% \/home\n\/dev\/sdb3              4128448    170800   3747936   5% \/tmp\n'+" %>&nbsp;</div>");
     _shell.templates.prompt = _.template("<%= node.path %> $");
     var _original_default = _shell.getCommandHandler('_default');
     var self = {
