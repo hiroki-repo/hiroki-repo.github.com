@@ -16,7 +16,6 @@
   <script src="example.js"></script>
 <title>hiroki-repo web</title>
 <script>
-    $(document).ready(function() {
 shell.setCommandHandler("echo", {
     exec: function(cmd, args, callback) {
         var arg = args[0] || '';
@@ -30,7 +29,6 @@ shell.setCommandHandler("df", {
     }
 });
 shell.activate();
-});
 </script>
 <script>
 $(function() {
