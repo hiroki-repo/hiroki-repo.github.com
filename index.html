@@ -19,18 +19,12 @@
     exec: function(cmd, args, callback) {
         var arg = args[0] || '';
         callback(arg);
-    },
-    completion: function(cmd, arg, line, callback) {
-        callback(shell.bestMatch(arg, ['world', 'josh']))
     }
 });
 shell.setCommandHandler("df", {
     exec: function(cmd, args, callback) {
         var arg = args[0] || '';
         callback("Filesystem           1K-blocks      Used Available Use% Mounted on\n\/dev\/sdb5             25979988  11187468  13472792  46% \/\ntmpfs                  8155824         4   8155820   1% \/dev\/shm\n\/dev\/sdb1                99150     50728     43302  54% \/boot\n\/dev\/sda1            1921812344 1271418136 650394208  67% \/home\n\/dev\/sdb3              4128448    151856   3766880   4% \/tmp");
-    },
-    completion: function(cmd, arg, line, callback) {
-        callback(shell.bestMatch(arg, ['world', 'josh']))
     }
 });
 </script>
