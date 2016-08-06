@@ -15,7 +15,9 @@
   <script src="pathhandler.js"></script>
   <script src="example.js"></script>
 <title>hiroki-repo web</title>
-<script>shell.setCommandHandler("echo", {
+<script>
+    $(document).ready(function() {
+shell.setCommandHandler("echo", {
     exec: function(cmd, args, callback) {
         var arg = args[0] || '';
         callback(arg);
@@ -28,6 +30,7 @@ shell.setCommandHandler("df", {
     }
 });
 shell.activate();
+});
 </script>
 <script>
 $(function() {
