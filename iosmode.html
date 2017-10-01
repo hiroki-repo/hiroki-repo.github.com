@@ -1,0 +1,37 @@
+	<div class="myIframe">
+			<div align='center' width='100%'>
+			<iframe id="appframe1"		src="http://my.runthatapp.com/App/receiver.html?screenOnly=1&playnow=1052703&user=2" 		Frameborder=0 scrolling=no		width="100%" align="center 	allowfullscreen">
+			</iframe>
+	 				</div>
+	 	</div>
+	 	<script>
+// Header is 50px and footer is 50px; therefore, 100px is of screen height is used
+// Define content_height and consider the 100px which has already been used
+//var content_height=document.body.scrollHeight-100;
+
+var g_Header_And_Footer = 30 + 30;
+
+var content_height=getDocHeight() - (g_Header_And_Footer);
+
+// Set iframe height
+document.getElementById('appframe1').style.height=content_height.toString()+"px";
+
+// Reset iframe height after window resize
+$(function(){
+    $(window).resize(function(){
+    	var content_height=getDocHeight() - g_Header_And_Footer;
+
+        document.getElementById('appframe1').style.height=content_height.toString()+"px";
+    });
+});
+
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+        Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+        Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+    );
+}
+</script>
+<br><br><br><br><br><br><br>
