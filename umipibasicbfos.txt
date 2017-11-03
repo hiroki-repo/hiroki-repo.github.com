@@ -1,3 +1,5 @@
+<blockquote>
+<p>
 UMIBASIC:MB#1
 1 GOTO 33
 7 PCGRESET: PCGSET 128,PCGGET$( 92)
@@ -62,3 +64,5 @@ UMIBASIC:MB#1
 233 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: END
 234 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: GOTO 1
 UMIBASIC:END
+</p>
+<blockquote>
