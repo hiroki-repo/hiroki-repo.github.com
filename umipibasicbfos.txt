@@ -1,68 +1,68 @@
+<p> </p>
 <blockquote>
-<p>
-UMIBASIC:MB#1
-1 GOTO 33
-7 PCGRESET: PCGSET 128,PCGGET$( 92)
-8 PCGSET 92,"00030C304000000000"
-9 I=0: J=0
-10 FOR I=0 TO 30
-20 IF P[I]>1 THEN GOSUB P[I]
-21 IF P[I]=0 THEN GOSUB 146
-30 NEXT
-31 I=0: J=0: IF P[0]=0THEN END
-32 GOTO 10
-33 CLEAR: PRINT "";
-34 P[0]=140: S$[0]=""
-35 FOR I=0 TO 30: S$[I]=CHR$(0): NEXT: R=0: U=0: T=0: Q$=""
-36 PCGSET 1,PCGGET$( 92): Z=1
-100 GOTO 7
-140 FOR M=0 TO 255: PRINT CHR$( M);
-141 J=J+1
-142 IF J=32 THEN J=0: PRINT ""
-143 P[0]=0: NEXT: GOSUB 146: RETURN
-144 Q$="++++++++++[>++++++++++<-]>++++.+++++++.--------.--."
-145 GOSUB 147: P[0]=0: RETURN
-146 Q$="//[->>+<-<]>>>+[,.]": GOSUB 147: P[0]=0: RETURN
-147 FOR R=0 TO LEN( Q$)-1:IF MID$( Q$,R,1)="," THEN FOR V=0 TO 1: K$=INKEY$: S$[T]=K$:V=LEN( K$): PRINT"";: NEXT
-148 IF MID$( Q$,R,1)="." THEN PRINT S$[T];
-149 IF MID$( Q$,R,1)="[" THEN U=R:FOR W=0 TO 1: PRINT "";: NEXT
-150 IF MID$( Q$,R,1)="]" THEN W=R:R=U:IF S$[T]=CHR$( 0)THEN R=W
-151 IF MID$( Q$,R,1)=">" THEN T=T+1: IF T=31 THEN T=0
-152 IF MID$( Q$,R,1)="<" THEN T=T-1: IF T=-1 THEN T=30
-153 IF MID$( Q$,R,1)="+" THEN S$[T]=CHR$( ASC( S$[T])+1)
-154 IF MID$( Q$,R,1)="+" THEN IF ASC( S$[T])=256 THEN S$[T]=CHR$( 0)
-155 IF MID$( Q$,R,1)="-" THEN IF ASC( S$[T])=0 THEN S$[T]=CHR$( 256)
-156 IF MID$( Q$,R,1)="-" THEN S$[T]=CHR$( ASC( S$[T])-1)
-157 IF MID$( Q$,R,1)="#" THEN P[I]=166+ASC(P$[28])+ASC(P$[29])+ASC(P$[30]):GOSUB P[I]: FOR W=28 TO 30: P$[W]=CHR$( 0): NEXT
-158 IF MID$( Q$,R,1)="@" THEN CLS
-159 IF MID$( Q$,R,1)="/" THEN Z=Z+1
-161 IF Z=3 THEN Z=0
-162 GOTO 163+Z
-163 PRINT "": PRINT "S$[";: PRINT T;: PRINT "]=";: PRINT ASC( S$[T]);: PRINT ":R=";: PRINT R;: PRINT ":T=";: PRINT T
-164 V=0: NEXT: RETURN
-165 PRINT "";: V=0: NEXT: RETURN
-166 Q$="": PRINT ">";
-167 PRINT K$;: K$=INKEY$: IF K$="EXE" THEN PRINT "": K$="": GOSUB 147: K$="": PRINT "": PRINT ">";: Q=""
-168 Q$=Q$+K$:GOTO 167
-169 Q$="#": GOSUB 147:RETURN
-171 PRINT "HELLO WORLD!": RETURN
-172 PRINT "Brainfuck OS": PRINT "(C)2012-2017 Arifureta Software S.": RETURN
-173 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: END
-174 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: GOTO 1
-175 FREE: RETURN
-176 IF ASC( S$[26])=0THEN S$[24]=CHR$( ASC( S$[25])+ASC( S$[27]))
-177 IF ASC( S$[26])=1THEN S$[24]=CHR$( ASC( S$[25])-ASC( S$[27]))
-178 IF ASC( S$[26])=2THEN S$[24]=CHR$( ASC( S$[25])*ASC( S$[27]))
-179 IF ASC( S$[26])=3THEN S$[24]=CHR$( ASC( S$[25])/ASC( S$[27]))
-180 IF ASC( S$[26])=4THEN S$[24]=CHR$( ASC( S$[25])%ASC( S$[27]))
-181 PRINT ASC( S$[24]): RETURN
-182 PRINT "The System runmode is ";
-183 IF Z=0 THEN PRINT "Debug";
-184 IF Z=1 THEN PRINT "Normal";
-185 IF Z=2 THEN PRINT "DownClocked";
-186 PRINT " Mode.";: RETURN
-233 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: END
-234 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: GOTO 1
-UMIBASIC:END
-</p>
-<blockquote>
+<p>UMIBASIC:MB#1</p>
+<p>1 GOTO 33</p>
+<p>7 PCGRESET: PCGSET 128,PCGGET$( 92)</p>
+<p>8 PCGSET 92,"00030C304000000000"</p>
+<p>9 I=0: J=0</p>
+<p>10 FOR I=0 TO 30</p>
+<p>20 IF P[I]&gt;1 THEN GOSUB P[I]</p>
+<p>21 IF P[I]=0 THEN GOSUB 146</p>
+<p>30 NEXT</p>
+<p>31 I=0: J=0: IF P[0]=0THEN END</p>
+<p>32 GOTO 10</p>
+<p>33 CLEAR: PRINT "";</p>
+<p>34 P[0]=140: S$[0]=""</p>
+<p>35 FOR I=0 TO 30: S$[I]=CHR$(0): NEXT: R=0: U=0: T=0: Q$=""</p>
+<p>36 PCGSET 1,PCGGET$( 92): Z=1</p>
+<p>100 GOTO 7</p>
+<p>140 FOR M=0 TO 255: PRINT CHR$( M);</p>
+<p>141 J=J+1</p>
+<p>142 IF J=32 THEN J=0: PRINT ""</p>
+<p>143 P[0]=0: NEXT: GOSUB 146: RETURN</p>
+<p>144 Q$="++++++++++[&gt;++++++++++&lt;-]&gt;++++.+++++++.--------.--."</p>
+<p>145 GOSUB 147: P[0]=0: RETURN</p>
+<p>146 Q$="//[-&gt;&gt;+&lt;-&lt;]&gt;&gt;&gt;+[,.]": GOSUB 147: P[0]=0: RETURN</p>
+<p>147 FOR R=0 TO LEN( Q$)-1:IF MID$( Q$,R,1)="," THEN FOR V=0 TO 1: K$=INKEY$: S$[T]=K$:V=LEN( K$): PRINT"";: NEXT</p>
+<p>148 IF MID$( Q$,R,1)="." THEN PRINT S$[T];</p>
+<p>149 IF MID$( Q$,R,1)="[" THEN U=R:FOR W=0 TO 1: PRINT "";: NEXT</p>
+<p>150 IF MID$( Q$,R,1)="]" THEN W=R:R=U:IF S$[T]=CHR$( 0)THEN R=W</p>
+<p>151 IF MID$( Q$,R,1)="&gt;" THEN T=T+1: IF T=31 THEN T=0</p>
+<p>152 IF MID$( Q$,R,1)="&lt;" THEN T=T-1: IF T=-1 THEN T=30</p>
+<p>153 IF MID$( Q$,R,1)="+" THEN S$[T]=CHR$( ASC( S$[T])+1)</p>
+<p>154 IF MID$( Q$,R,1)="+" THEN IF ASC( S$[T])=256 THEN S$[T]=CHR$( 0)</p>
+<p>155 IF MID$( Q$,R,1)="-" THEN IF ASC( S$[T])=0 THEN S$[T]=CHR$( 256)</p>
+<p>156 IF MID$( Q$,R,1)="-" THEN S$[T]=CHR$( ASC( S$[T])-1)</p>
+<p>157 IF MID$( Q$,R,1)="#" THEN P[I]=166+ASC(P$[28])+ASC(P$[29])+ASC(P$[30]):GOSUB P[I]: FOR W=28 TO 30: P$[W]=CHR$( 0): NEXT</p>
+<p>158 IF MID$( Q$,R,1)="@" THEN CLS</p>
+<p>159 IF MID$( Q$,R,1)="/" THEN Z=Z+1</p>
+<p>161 IF Z=3 THEN Z=0</p>
+<p>162 GOTO 163+Z</p>
+<p>163 PRINT "": PRINT "S$[";: PRINT T;: PRINT "]=";: PRINT ASC( S$[T]);: PRINT ":R=";: PRINT R;: PRINT ":T=";: PRINT T</p>
+<p>164 V=0: NEXT: RETURN</p>
+<p>165 PRINT "";: V=0: NEXT: RETURN</p>
+<p>166 Q$="": PRINT "&gt;";</p>
+<p>167 PRINT K$;: K$=INKEY$: IF K$="EXE" THEN PRINT "": K$="": GOSUB 147: K$="": PRINT "": PRINT "&gt;";: Q=""</p>
+<p>168 Q$=Q$+K$:GOTO 167</p>
+<p>169 Q$="#": GOSUB 147:RETURN</p>
+<p>171 PRINT "HELLO WORLD!": RETURN</p>
+<p>172 PRINT "Brainfuck OS": PRINT "(C)2012-2017 Arifureta Software S.": RETURN</p>
+<p>173 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: END</p>
+<p>174 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: GOTO 1</p>
+<p>175 FREE: RETURN</p>
+<p>176 IF ASC( S$[26])=0THEN S$[24]=CHR$( ASC( S$[25])+ASC( S$[27]))</p>
+<p>177 IF ASC( S$[26])=1THEN S$[24]=CHR$( ASC( S$[25])-ASC( S$[27]))</p>
+<p>178 IF ASC( S$[26])=2THEN S$[24]=CHR$( ASC( S$[25])*ASC( S$[27]))</p>
+<p>179 IF ASC( S$[26])=3THEN S$[24]=CHR$( ASC( S$[25])/ASC( S$[27]))</p>
+<p>180 IF ASC( S$[26])=4THEN S$[24]=CHR$( ASC( S$[25])%ASC( S$[27]))</p>
+<p>181 PRINT ASC( S$[24]): RETURN</p>
+<p>182 PRINT "The System runmode is ";</p>
+<p>183 IF Z=0 THEN PRINT "Debug";</p>
+<p>184 IF Z=1 THEN PRINT "Normal";</p>
+<p>185 IF Z=2 THEN PRINT "DownClocked";</p>
+<p>186 PRINT " Mode.";: RETURN</p>
+<p>233 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: END</p>
+<p>234 PRINT "Halt System now";: FOR W=0 TO 3: PRINT ".";: NEXT: GOTO 1</p>
+<p>UMIBASIC:END</p>
+</blockquote>
+<p> </p>
