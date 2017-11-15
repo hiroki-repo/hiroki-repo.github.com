@@ -1,3 +1,0 @@
-Debug app
-DEBG00000
-
