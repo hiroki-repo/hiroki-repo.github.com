@@ -178,7 +178,16 @@ function FileSystem($parent, $startingDir){
 		  	_this.showSelectedDetails(parseInt($(this).attr('data-id')));
 		});
 
-		$('.folder-contents .contents div').dblclick(function() {
+		//$('.folder-contents .contents div').dblclick(function() {
+		$('.folder-contents .contents div').click(function() {
+			if( !clickCount ) {
+		++clickCount ;
+
+		setTimeout( function() {
+			clickCount = 0 ;
+		}, 350 ) ;
+	} else {
+	//}
 			  openedID = $(this).attr('data-id');
 			  switch($(this).attr('data-type')){
 			  	case 'folder':
@@ -201,6 +210,7 @@ function FileSystem($parent, $startingDir){
 			  	default:
 					_parent.errorMessage.open();
 			  	break;
+					clickCount = 0 ;
 			  }
 
 	 	 });
