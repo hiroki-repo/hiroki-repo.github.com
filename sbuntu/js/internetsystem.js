@@ -61,7 +61,7 @@ function FirefoxSystem($parent){
 	    		internalClick = true;
 	    		forwardHistory = new Array();
 	    		backHistory.push(inputURL);
-	    		changeURL(inputURL.replace('&','%26'));
+	    		changeURL(inputURL);
 	    	}
 	    });
 
