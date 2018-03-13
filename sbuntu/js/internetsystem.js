@@ -11,7 +11,7 @@ function FirefoxSystem($parent){
 	var firefoxHeight = 0;
 	var urlWidth = 0;
 	var maximised = false;
-	var homePage = 'http://start.ubuntu.com';
+	var homePage = 'https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=http://start.ubuntu.com';
 	var internalClick = true;
 	var name = 'Browse the internet';
 	var _isOpen = false;
@@ -50,7 +50,7 @@ function FirefoxSystem($parent){
 
 	    $('#submitURL').keypress(function(e){
 	    	if(e.keyCode == 13){
-	    		var inputURL = $('#submitURL ').val();
+	    		var inputURL = $('#submitURL ').val().replace("&","%26");
 	    		if(inputURL.slice(0,4) != 'http'){
 	    			if(inputURL.slice(0,3) != 'www'){
 	    				inputURL = 'http://www.'+inputURL;
@@ -61,13 +61,15 @@ function FirefoxSystem($parent){
 	    		internalClick = true;
 	    		forwardHistory = new Array();
 	    		backHistory.push(inputURL);
-	    		changeURL(inputURL);
+	    		changeURL("https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=" + inputURL);
 	    	}
 	    });
 
 	    $('#submitSearch ').keypress(function(e){
 	    	if(e.keyCode == 13){
-	    		var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch&search='+$('#submitSearch ').val().replace(' ','+');
+
+	    		var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch%26search='+$('#submitSearch ').val().replace(' ','+');
+	    		//var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch&search='+$('#submitSearch ').val().replace(' ','+');
 	    		forwardHistory = new Array();
 	    		backHistory.push(inputURL);
 	    		internalClick = true;
