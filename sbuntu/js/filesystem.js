@@ -23,6 +23,7 @@ function FileSystem($parent, $startingDir){
 	var _isOpen = false;
 	var list_type = 'display-icon';
 	var openedID = -1;
+	var clickCount = 0 ;
 
 	var folderContentsHeight = 0;
 	var folderContentsWidth = 0;
