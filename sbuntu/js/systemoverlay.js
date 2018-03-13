@@ -550,6 +550,7 @@ function SystemOverlay($parent){
 					_parent.ubuntuOneSystem.open();
 				break;
 				default:
+					alert(appName);
 					_parent.errorMessage.open();
 				break;
 			}
