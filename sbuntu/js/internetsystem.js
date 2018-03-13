@@ -68,8 +68,8 @@ function FirefoxSystem($parent){
 	    $('#submitSearch ').keypress(function(e){
 	    	if(e.keyCode == 13){
 
-	    		var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch%26search='+$('#submitSearch ').val().replace(' ','+');
-	    		//var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch&search='+$('#submitSearch ').val().replace(' ','+');
+	    		//var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch%26search='+$('#submitSearch ').val().replace(' ','+');
+	    		var inputURL = 'http://www.wikipedia.org/w/index.php?title=Special%3ASearch&search='+$('#submitSearch ').val().replace(' ','+');
 	    		forwardHistory = new Array();
 	    		backHistory.push(inputURL);
 	    		internalClick = true;
@@ -144,7 +144,7 @@ function FirefoxSystem($parent){
 
 	function changeURL($url){
 	    	$('#submitURL ').attr('value', $url);
-		$url = 'https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=' + $url
+		$url = 'https://nrird.xyz/proxy/index.php/' + $url
 	    	$('#firefoxInternet').attr('src', $url);
 	    	updateButtons();
 	    }
