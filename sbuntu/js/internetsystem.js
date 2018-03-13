@@ -144,7 +144,7 @@ function FirefoxSystem($parent){
 
 	function changeURL($url){
 	    	$('#submitURL ').attr('value', $url);
-		$url = 'https://nrird.xyz/proxy/index.php/' + $url
+		$url = 'https://hiroki7v11.miraiserver.net/pxy/proxy.php/' + $url
 	    	$('#firefoxInternet').attr('src', $url);
 	    	updateButtons();
 	    }
