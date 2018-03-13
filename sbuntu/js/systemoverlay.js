@@ -546,7 +546,7 @@ function SystemOverlay($parent){
 				case 'movieplayer':
 					_parent.moviePlayerSystem.open();
 				break;
-				case 'terminal':
+				case 'terminalserver':
 					_parent.ubuntuOneSystem.open();
 				break;
 				default:
