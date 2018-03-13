@@ -11,7 +11,7 @@ function FirefoxSystem($parent){
 	var firefoxHeight = 0;
 	var urlWidth = 0;
 	var maximised = false;
-	var homePage = 'https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=http://start.ubuntu.com';
+	var homePage = 'http://start.ubuntu.com';
 	var internalClick = true;
 	var name = 'Browse the internet';
 	var _isOpen = false;
@@ -61,7 +61,7 @@ function FirefoxSystem($parent){
 	    		internalClick = true;
 	    		forwardHistory = new Array();
 	    		backHistory.push(inputURL);
-	    		changeURL("https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=" + inputURL);
+	    		changeURL(inputURL.replace('&','%26'););
 	    	}
 	    });
 
@@ -144,7 +144,7 @@ function FirefoxSystem($parent){
 
 	function changeURL($url){
 	    	$('#submitURL ').attr('value', $url);
-	    	$('#firefoxInternet').attr('src', $url);
+	    	$('#firefoxInternet').attr('src', "https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=" + $url);
 	    	updateButtons();
 	    }
 
