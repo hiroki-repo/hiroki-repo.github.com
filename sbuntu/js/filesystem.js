@@ -180,7 +180,7 @@ function FileSystem($parent, $startingDir){
 		});
 
 		//$('.folder-contents .contents div').dblclick(function() {
-		$('.folder-contents .contents div').click(function() {
+		$('.folder-contents .contents div').mousedown(function() {
 			if( !clickCount ) {
 		++clickCount ;
 
