@@ -16,6 +16,7 @@ function ShotwellSystem($parent){
 	var columns = 0;
 	var currentPercent = 0.3;
 	var currentIndex = 0;
+	var clickCount = 0 ;
 
 	this.init = function(){
 		columns = Math.floor($('#shotwell .container .images').width() / 158);
@@ -159,13 +160,24 @@ function ShotwellSystem($parent){
 			$('#shotwell .sidebar .details .date').text(_parent.fileLibrary[$(this).attr('id')].date());
 			$('#shotwell .sidebar .details .size').text(_parent.fileLibrary[$(this).attr('id')].size());
 		});
-		$('#shotwell .container .images img').dblclick(function(){
+		//$('#shotwell .container .images img').dblclick(function(){
+		$('#shotwell .container .images img').mousedown(function(){
+			if( !clickCount ) {
+		++clickCount ;
+
+		setTimeout( function() {
+			clickCount = 0 ;
+		}, 350 ) ;
+
+	} else {
 			$('#shotwell .container .images').addClass('singleImage');
 			$('#shotwell .container .tools .jump-image').show();
 			$('#shotwell .container .tools .slider-container').hide();
 			currentIndex = $(this).attr('id');
 			_this.display(currentIndex);
 			_this.checkNextPrev();
+			clickCount = 0 ;
+	}
 		});
 		this.resize();
 	}
