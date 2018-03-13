@@ -213,6 +213,7 @@ function FileSystem($parent, $startingDir){
 			  	break;
 					clickCount = 0 ;
 			  }
+	}
 
 	 	 });
 	}
