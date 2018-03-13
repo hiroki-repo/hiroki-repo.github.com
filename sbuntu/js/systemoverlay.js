@@ -547,7 +547,8 @@ function SystemOverlay($parent){
 					_parent.moviePlayerSystem.open();
 				break;
 				case 'terminalserver':
-					_parent.ubuntuOneSystem.open();
+					_parent.systemMenu.handleMenuClick('uone');
+					//_parent.ubuntuOneSystem.open();
 				break;
 				default:
 					//alert(appName);
