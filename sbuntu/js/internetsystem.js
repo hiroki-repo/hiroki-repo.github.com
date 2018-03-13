@@ -144,7 +144,8 @@ function FirefoxSystem($parent){
 
 	function changeURL($url){
 	    	$('#submitURL ').attr('value', $url);
-	    	$('#firefoxInternet').attr('src', 'https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=' + $url);
+		$url = 'https://hiroki7v11.miraiserver.net/pxy/index.php?uurl=' + $url
+	    	$('#firefoxInternet').attr('src', $url);
 	    	updateButtons();
 	    }
 
