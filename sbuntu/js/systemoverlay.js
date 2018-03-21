@@ -475,7 +475,7 @@ function SystemOverlay($parent){
 			  	_parent.moviePlayerSystem.addVideo();
 			break;
 			case 'app':
-				_parent.systemMenu.handleMenuClick(fileObject.id());
+				_parent.systemMenu.handleMenuClick(fileObject.name());
 			break;
 			default:
 				_this.closeOverlay();
