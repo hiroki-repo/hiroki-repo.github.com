@@ -210,6 +210,9 @@ function FileSystem($parent, $startingDir){
 			  	case 'audio':
 			  		_parent.errorMessage.open();
 			  	break;
+			  	case 'app':
+			  		_parent.systemMenu.handleMenuClick(list_of_files[$(this).attr('data-id')].id());
+			  	break;
 			  	default:
 					_parent.errorMessage.open();
 			  	break;
