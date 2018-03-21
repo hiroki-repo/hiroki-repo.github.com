@@ -211,7 +211,7 @@ function FileSystem($parent, $startingDir){
 			  		_parent.errorMessage.open();
 			  	break;
 			  	case 'app':
-			  		_parent.systemMenu.handleMenuClick(list_of_files[$(this).attr('data-id')].name());
+			  		_parent.systemMenu.handleMenuClick(list_of_files[$(this).attr('data-id')].url());
 			  	break;
 			  	default:
 					_parent.errorMessage.open();
