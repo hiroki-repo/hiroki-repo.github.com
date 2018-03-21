@@ -188,7 +188,7 @@ function FileSystem($parent, $startingDir){
 
 		setTimeout( function() {
 			clickCount = 0 ;
-		}, 350 ) ;
+		}, 250 ) ;
 	} else {
 	//}
 			  openedID = $(this).attr('data-id');
