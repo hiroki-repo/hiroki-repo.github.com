@@ -45,7 +45,7 @@ function FileSystem($parent, $startingDir){
 		list_of_files.push(new Folder(_work_folder_, '/'+_home_folder_+'/'+_documents_folder_+'/'+_canonical_folder_));
 		list_of_files.push(new Folder(_branches_folder_, '/'+_home_folder_+'/'+_documents_folder_+'/'+_canonical_folder_));
 
-		list_of_files.push(new Folder('Home', '/'));
+		list_of_files.push(new Folder('TestApps', '/'+_home_folder_+'/'+_desktop_folder_));
 
 		list_of_files = list_of_files.concat(_parent.fileLibrary);
 
