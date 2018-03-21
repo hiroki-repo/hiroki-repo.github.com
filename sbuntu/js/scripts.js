@@ -411,6 +411,8 @@ function setupShotwellSystem(){
 
 	fileLibrary.push(new File(fileLibrary.length,'../audio/preview.mp3','audio', _Happiness_title_, _music_size_, _music_date_, '/'+_home_folder_+'/'+_music_folder_));
 
+	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/tc.jpg','photo', "TC", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_downloads_folder_));
+
 	shotwellSystem = new ShotwellSystem(this);
 	shotwellSystem.init();
 }
