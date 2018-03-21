@@ -214,6 +214,14 @@ function SystemMenu($parent){
 				_parent.workspaces.open();
 			}
 			break;
+			case 'Terminal':
+				var div = $('#ubuntuone-window');
+				 if(!div.is(':visible')){
+				 	_parent.ubuntuOneSystem.open();
+				 }
+				 $('#ubuntuone-window ').trigger('mousedown');
+			break;
+
 			default:
 				openedApp = false;
 				_parent.errorMessage.open();
