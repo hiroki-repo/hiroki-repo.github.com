@@ -413,7 +413,7 @@ function setupShotwellSystem(){
 
 	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/tc.jpg','photo', "TC", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_downloads_folder_));
 
-	//fileLibrary.push(new File(fileLibrary.length,'uone','app', "Terminal", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_documents_folder_));
+	fileLibrary.push(new File(fileLibrary.length,'writer','app', "Debug Notes", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_documents_folder_));
 
 	shotwellSystem = new ShotwellSystem(this);
 	shotwellSystem.init();
