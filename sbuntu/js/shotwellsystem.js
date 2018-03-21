@@ -167,7 +167,7 @@ function ShotwellSystem($parent){
 
 		setTimeout( function() {
 			clickCount = 0 ;
-		}, 350 ) ;
+		}, 250 ) ;
 
 	} else {
 			$('#shotwell .container .images').addClass('singleImage');
