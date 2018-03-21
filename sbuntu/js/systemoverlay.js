@@ -201,7 +201,7 @@ function SystemOverlay($parent){
 				return  '<div data-id="'+$i+'"><img src="'+$object.url()+'" /><p>'+$object.name()+'</p></div>';
 			break;
 			case 'app':
-				return  '<div data-id="'+$i+'"><img src="'+$object.url()+'.png" /><p>'+$object.name()+'</p></div>';
+				return  '<div data-id="'+$i+'"><img src="../img/app/'+$object.url()+'.png" /><p>'+$object.name()+'</p></div>';
 			break;
 			default:
 				return  '<div data-id="'+$i+'"><img src="../img/applications/unknown.png" /><p>'+$object.name()+'</p></div>';
