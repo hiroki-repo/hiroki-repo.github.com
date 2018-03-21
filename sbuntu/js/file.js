@@ -62,7 +62,7 @@ function File($id, $url, $type, $name, $size, $date ,$location){
 				var tempName = _url.split('/');
 				tempName = tempName[tempName.length-1].split('.')[0];
 				if($type == 'display-icon'){
-					return  '<div class="file '+$type+'"  data-type="app"  data-id='+$id+'><p class="border"><img src="../img/apps/'+tempName+'.png"  width="53px"  /></p><span>'+_name+'</span></div>';
+					return  '<div class="file '+$type+'"  data-type="app"  data-id='+$id+'><p><img src="../img/apps/'+tempName+'.png"  width="53px"  /></p><span>'+_name+'</span></div>';
 				}else{
 					return  '<div class="file '+$type+'"  data-type="app"  data-id='+$id+'><p></p><span>'+_name+'</span></div>';
 				}
