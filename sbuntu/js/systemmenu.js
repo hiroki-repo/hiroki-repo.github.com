@@ -224,6 +224,7 @@ function SystemMenu($parent){
 
 			default:
 				openedApp = false;
+				alert($menu);
 				_parent.errorMessage.open();
 			break;
 		}
