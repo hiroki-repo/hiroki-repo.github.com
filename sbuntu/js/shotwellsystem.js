@@ -20,7 +20,7 @@ function ShotwellSystem($parent){
 
 	this.init = function(){
 		columns = Math.floor($('#shotwell .container .images').width() / 158);
-		imageCount = _parent.fileLibrary.length - 2;
+		imageCount = _parent.fileLibrary.length - 4;
 		this.setupControl();
 	}
 
