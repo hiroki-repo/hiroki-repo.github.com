@@ -407,11 +407,11 @@ function setupShotwellSystem(){
 	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/library/TheGrassAintGreener.jpg','photo', _the_grass_aint_greener_title_, _photo_size_, _photo_date_, '/'+_home_folder_+'/'+_pictures_folder_));
 	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/library/WildWheat.jpg','photo', _wildWheat_title_, _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_pictures_folder_));
 
+	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/tc.jpg','photo', "TC", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_downloads_folder_));
+
 	fileLibrary.push(new File(fileLibrary.length,'../videos/IAmWeAre.flv','video', _introduction_ubuntu_title_, _video_size_, _video_date_, '/'+_home_folder_+'/'+_videos_folder_));
 
 	fileLibrary.push(new File(fileLibrary.length,'../audio/preview.mp3','audio', _Happiness_title_, _music_size_, _music_date_, '/'+_home_folder_+'/'+_music_folder_));
-
-	fileLibrary.push(new File(fileLibrary.length,'../img/shotwell/tc.jpg','photo', "TC", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_downloads_folder_));
 
 	fileLibrary.push(new File(fileLibrary.length,'writer','app', "Debug Notes", _photo_size_,_photo_date_, '/'+_home_folder_+'/'+_documents_folder_));
 
