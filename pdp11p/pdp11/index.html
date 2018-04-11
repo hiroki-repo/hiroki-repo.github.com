@@ -21,15 +21,103 @@
 		<script src="cons.js" type="text/javascript"></script>
 		<script src="rk05.js" type="text/javascript"></script>
 		<script src="pdp11.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		function onscreenkeyboardpress(key){
+		if (key.charCodeAt(0) == 128) {document.getElementById("shiftedosk").value = "1"}else{
+		if (document.getElementById("shiftedosk").value == "1") {if (key.charCodeAt(0) >= 65 && key.charCodeAt(0) <= 90 ){key = String.fromCharCode(key.charCodeAt(0) + 32);}
+		if (key.charCodeAt(0) >= 49 && key.charCodeAt(0) <= 57 ){key = String.fromCharCode(key.charCodeAt(0) - 16);}
+		if (key.charCodeAt(0) >= 91 && key.charCodeAt(0) <= 94 ){key = String.fromCharCode(key.charCodeAt(0) + 32);}
+		if (key.charCodeAt(0) >= 44 && key.charCodeAt(0) <= 47 ){key = String.fromCharCode(key.charCodeAt(0) + 16);}
+		if (key.charCodeAt(0) == 48 ){key = String.fromCharCode(33);}
+		}
+		document.getElementById("shiftedosk").value = ""
+		specialchar(key.charCodeAt(0));
+		}
+		}
+		}
+		</script>
+	</head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dli">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>PDP-11 emulator</title>
+		<link rel="stylesheet" href="http://phicode.de/phi.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<style>
+		#terminal {
+			font-family: monospace;
+			width: 100%;
+			height: 10cm;
+		}
+		#debug {
+			font-family: monospace;
+			width: 100%;
+			height: 5cm;
+		}
+		</style>
+		<script src="disasm.js" type="text/javascript"></script>
+		<script src="cons.js" type="text/javascript"></script>
+		<script src="rk05.js" type="text/javascript"></script>
+		<script src="pdp11.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		function onscreenkeyboardpress(key){
+		if (key.charCodeAt(0) == 128) {document.getElementById("shiftedosk").value = "1"}else{
+		if (document.getElementById("shiftedosk").value == "1") {if (key.charCodeAt(0) >= 65 && key.charCodeAt(0) <= 90 ){key = String.fromCharCode(key.charCodeAt(0) + 32);}
+		if (key.charCodeAt(0) >= 49 && key.charCodeAt(0) <= 57 ){key = String.fromCharCode(key.charCodeAt(0) - 16);}
+		if (key.charCodeAt(0) >= 91 && key.charCodeAt(0) <= 94 ){key = String.fromCharCode(key.charCodeAt(0) + 32);}
+		if (key.charCodeAt(0) >= 44 && key.charCodeAt(0) <= 47 ){key = String.fromCharCode(key.charCodeAt(0) + 16);}
+		if (key.charCodeAt(0) == 48 ){key = String.fromCharCode(33);}
+		}
+		document.getElementById("shiftedosk").value = ""
+		specialchar(key.charCodeAt(0));
+		}
+		}
+		}
+		</script>
 	</head>
 	<body onload="reset(); rkinit()">
+		<input id="shiftedosk" type="hidden" />
 		<input type="button" value="reset" onclick="reset()" />
 		<input type="button" value="run" onclick="run()" />
 		<input type="button" value="stop" onclick="stop()" />
-		<span id="ips"> </span>
+		<div style="display:none;"><span id="ips"> </span>
 		<span id="rkbusy" style='display: none'>hard disk busy</span>
 		<div>press run, type <tt>unix</tt> at the <tt>@</tt> prompt to load the kernel, enjoy! <a href="http://aiju.de/code/pdp11/faq">faq</a></div>
-		<textarea id="terminal" onkeypress="addchar(event.which)" readonly="readonly" onkeyup="specialchar(event.which)"> </textarea>
-		<textarea id="debug" readonly="readonly"> </textarea><textarea id="inputboxforsw" cols=30 lows=7 style="width:5;height:10;"></textarea><script type="text/javascript">var webosruntime = setInterval(function() {var elem = document.getElementById("inputboxforsw");if(elem.value == ""){}else{specialchar(elem.value.charCodeAt(0));elem.value="";}}, 10);</script>
+		</div><textarea id="terminal" onkeypress="addchar(event.which)" readonly="readonly" onkeyup="specialchar(event.which)"> </textarea>
+		<div style='display: none'><textarea id="debug" readonly="readonly"> </textarea></div><!--<input id="debug" type="hidden" /><!--<textarea id="inputboxforsw" cols=30 lows=7 style="width:5;height:10;"></textarea><script type="text/javascript">var webosruntime = setInterval(function() {var elem = document.getElementById("inputboxforsw");if(elem.value == ""){}else{specialchar(elem.value.charCodeAt(0));elem.value="";}}, 10);</script>-->
+		<button onclick="onscreenkeyboardpress('~');">~</button>
+		<button onclick="onscreenkeyboardpress('1');">1</button>
+		<button onclick="onscreenkeyboardpress('2');">2</button>
+		<button onclick="onscreenkeyboardpress('3');">3</button>
+		<button onclick="onscreenkeyboardpress('4');">4</button>
+		<button onclick="onscreenkeyboardpress('5');">5</button>
+		<button onclick="onscreenkeyboardpress('6');">6</button>
+		<button onclick="onscreenkeyboardpress('7');">7</button>
+		<button onclick="onscreenkeyboardpress('8');">8</button>
+		<button onclick="onscreenkeyboardpress('9');">9</button>
+		<button onclick="onscreenkeyboardpress('0');">0</button>
+		<button onclick="onscreenkeyboardpress('-');">-</button>
+		<button onclick="onscreenkeyboardpress('^');">^</button>
+		<button onclick="onscreenkeyboardpress('\');">\</button>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(8));">BS</button><br>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(9));">TAB</button>
+		<button onclick="onscreenkeyboardpress('Q');">Q</button>
+		<button onclick="onscreenkeyboardpress(',');">,</button>
+		<button onclick="onscreenkeyboardpress('.');">.</button>
+		<button onclick="onscreenkeyboardpress('/');">/</button>
+		<button onclick="onscreenkeyboardpress('\\');">\</button><br>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(17));">CTR</button>
+		<button onclick="onscreenkeyboardpress('_');">_</button>
+		<button onclick="/*onscreenkeyboardpress('');*/">[S]</button>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(18));">ALT</button>
+		<button onclick="/*onscreenkeyboardpress('');*/">CHC</button>
+		<button onclick="onscreenkeyboardpress(' ');"> SHIFT </button>
+		<button onclick="/*onscreenkeyboardpress('N');*/">TRS</button>
+		<button onclick="/*onscreenkeyboardpress('M');*/">KC</button>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(18));">ALT</button>
+		<button onclick="/*onscreenkeyboardpress('');*/">MN</button>
+		<button onclick="onscreenkeyboardpress(String.fromCharCode(17));">CTR</button>
+		
 	</body>
 </html>
