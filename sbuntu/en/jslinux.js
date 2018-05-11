@@ -151,7 +151,9 @@ function start()
      *    redirected on the server-side).
      */
     var modem = new JSModem(pc);
-    if ((urloptdata.relay)){modem.connect(urloptdata.relay, 2080);}else{modem.connect('localhost', 2080);}
+    if ((urloptdata.ssled == "1")){
+    if ((urloptdata.relay)){modem.connect(urloptdata.relay, 2080, 1);}else{modem.connect('localhost', 2080, 1);}}else{
+    if ((urloptdata.relay)){modem.connect(urloptdata.relay, 2080);}else{modem.connect('localhost', 2080);}}
     
     pc.load_binary("vmlinux-2.6.20.bin", 0x00100000, start2);
 }
