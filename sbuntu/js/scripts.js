@@ -112,7 +112,7 @@ if( window.ontouchstart === null ){
       			movingFolder.css('left', e.changedTouches[0].pageX - folderXOffset);
       			movingFolder.css('top',Math.max(24, e.changedTouches[0].pageY - folderYOffset));
       		}
-     });*/
+     });
 
      $('.control').touchdown(function(e) {
 			movingFolder = $(this).parent();
@@ -125,7 +125,7 @@ if( window.ontouchstart === null ){
 			folderXOffset = e.changedTouches[0].pageX - movingFolder.position().left;
 			folderYOffset = e.changedTouches[0].pageY - movingFolder.position().top;
 	 });
-	 /*$(document).touchup(function() {
+	 $(document).touchup(function() {
 			movingFolder = null;
 	 });
 	
