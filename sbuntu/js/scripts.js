@@ -106,6 +106,7 @@ function init(){
 			movingFolder = null;
 	 });
 	//touch
+if( window.ontouchstart === null ){
 	/*$(document).touchmove(function(e){
       		if(movingFolder != null){
       			movingFolder.css('left', e.changedTouches[0].pageX - folderXOffset);
@@ -172,6 +173,7 @@ function init(){
 			guidedTourSystem.setSystem(set);
 		}
 	 });*/
+}
 	
 	//touch-eof
 
