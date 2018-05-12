@@ -494,6 +494,10 @@ function topShadow($display){
 		$('#control-buttons').hide();
 		$('#top').unbind('mouseover');
 		$('#top').unbind('mouseout');
+		//touch
+		$('#top').unbind('touchover');
+		$('#top').unbind('touchout');
+		//touch-eof
 	}else{
 		$('#top').removeClass('dropShadow');
 		$('#top').bind('mouseover',function(){
@@ -506,6 +510,18 @@ function topShadow($display){
 		$('#top').bind('mouseout',function(){
 			$('#control-buttons').hide();
 		});
+		//touch
+		$('#top').bind('touchover',function(){
+			currentSystemSelected = currentSystemSelected.replace(' pie_hover','');
+			var currentWindowFullScreen = $('.'+currentSystemSelected).hasClass('fullsize');
+			if(!$('#systemOverlay').is(':visible') && currentWindowFullScreen){
+				$('#control-buttons').show();
+			}
+		});
+		$('#top').bind('touchout',function(){
+			$('#control-buttons').hide();
+		});
+		//touch-eof
 	}
 }
 
