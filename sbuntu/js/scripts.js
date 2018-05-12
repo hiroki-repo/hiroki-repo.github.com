@@ -127,6 +127,52 @@ function init(){
 	 $(document).touchup(function() {
 			movingFolder = null;
 	 });
+	
+		 $('.window').touchdown(function(){
+		if($(this).attr('class').indexOf("firefox-window") != -1){
+			if($(this).attr('class').indexOf("fullsize") == -1){
+				$('.firefox-window .web-overlay-tran').css('width','100%');
+				$('.firefox-window .web-overlay-tran').hide();
+			}else{
+				$('.firefox-window .web-ubuntuOneSystemoverlay-tran').css('width','100px');
+				$('.firefox-window .web-overlay-tran').show();
+			}
+		}else{
+			$('.firefox-window .web-overlay-tran').css('width','100%');
+			$('.firefox-window .web-overlay-tran').show();
+		}
+		$('.window').css('z-index',2);
+		$('.window').removeClass('selected-window');
+		$('#top #top-left #title').text($('.window-title', this).text());
+		$('.'+currentSystemSelected).css('z-index',3);
+		$(this).css('z-index',4);
+
+		if($('css3-container').length > 0){
+	     	$('css3-container').css('z-index',2);
+	     	$('.'+currentSystemSelected).prev().css('z-index',3);
+	        $(this).prev().css('z-index',4);
+		}
+
+		$(this).addClass('selected-window');
+		openWindows[$(this).attr('id')] = true;
+
+		if(currentSystemSelected != $(this).attr('class').replace(' window', '').replace(' fullsize', '').replace(' selected-window','').replace(' window', '')){
+			currentSystemSelected = $(this).attr('class').replace(' fullsize', '');
+			currentSystemSelected = currentSystemSelected.replace(' selected-window','');
+			currentSystemSelected = currentSystemSelected.replace(' window', '');
+			$('#menu ul li .selected-window-arrow').hide();
+			var set = currentSystemSelected;
+			if(set == 'folder'){ set = 'home'; }
+			if(set == 'firefox-window'){ set = 'firefox'; }
+			if(set == 'email-window'){ set = 'email'; }
+			if(set == 'ubuntuone-window'){clipboard_set("x0bTOpened\n");}else{clipboard_set("x0bTUnused\n");}
+
+			$('#menu ul li.'+set+' .selected-window-arrow').show();
+
+			guidedTourSystem.setSystem(set);
+		}
+	 });
+	
 	//touch-eof
 
 	 $('.window').mousedown(function(){
