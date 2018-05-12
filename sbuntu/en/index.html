@@ -1616,6 +1616,38 @@ return arg
      firefoxSystem.open();
      clipboard_set("x0bExited2\n");
      }
+     if (el == "x0Bfileman\n"){
+     FileSystem.open();
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Bvideoui\n"){
+     MoviePlayerSystem.open();
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Bshotwell\n"){
+     ShotwellSystem.open();
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Bstorescr\n"){
+     SoftwareSystem.open();
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Boffice1\n"){
+     LibreSystem.open("calc");
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Boffice2\n"){
+     LibreSystem.open("writer");
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Boffice3\n"){
+     LibreSystem.open("impress");
+     clipboard_set("x0bExited2\n");
+     }
+     if (el == "x0Bemail\n"){
+     EmailSystem.open();
+     clipboard_set("x0bExited2\n");
+     }
      if (el == "x0bPPPED\n"){
      var elem = document.getElementById("netwconnections");
      elem.src = "../img/top/connection.png"
