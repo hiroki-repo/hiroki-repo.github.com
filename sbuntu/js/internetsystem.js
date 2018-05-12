@@ -144,9 +144,9 @@ function FirefoxSystem($parent){
 
 	function changeURL($url){
 	    	$('#submitURL ').attr('value', $url);
-		$url = 'https://nrird.xyz/proxy/index.php/' + $url
+		$url = 'https://nrird.xyz/proxy/index.php/' + $url;
 		if(document.getElementById("netwconnections").src == "../img/top/disconnected.png" or document.getElementById("netwconnections").src == "../img/top/blur/disconnected.png"){
-		$url = '../disconnected.html'
+		$url = '../disconnected.html';
 		}
 	    	$('#firefoxInternet').attr('src', $url);
 	    	updateButtons();
