@@ -271,6 +271,8 @@ JSModem.prototype.connect = function(host, port, encrypt) {
     Util.Debug("<< connect");
 }
 JSModem.prototype.disconnect = function() {
+     var elem = document.getElementById("netwconnections");
+     elem.src = "../img/top/disconnected.png"
     Util.Debug(">> disconnect");
     if (this.ws) {
         this.ws.close();
