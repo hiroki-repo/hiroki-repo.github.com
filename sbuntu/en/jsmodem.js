@@ -272,6 +272,7 @@ JSModem.prototype.connect = function(host, port, encrypt) {
 }
 JSModem.prototype.disconnect = function() {
     Util.Debug(">> disconnect");
+   clipboard_set("x0bUNPPPED\n");
     if (this.ws) {
         this.ws.close();
     }
