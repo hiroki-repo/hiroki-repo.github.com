@@ -146,9 +146,10 @@ function FirefoxSystem($parent){
 	    	$('#submitURL ').attr('value', $url);
 		$url = 'https://nrird.xyz/proxy/index.php/' + $url;
 		if(document.getElementById("netwconnections").src == "../img/top/disconnected.png" || document.getElementById("netwconnections").src == "../img/top/blur/disconnected.png"){
-		$url = '../disconnected.html';
-		}
-	    	$('#firefoxInternet').attr('src', $url);
+		//$url = '../disconnected.html';
+		$('#firefoxInternet').attr('src', "../disconnected.html");
+		}else{
+	    	$('#firefoxInternet').attr('src', $url);}
 	    	updateButtons();
 	    }
 
