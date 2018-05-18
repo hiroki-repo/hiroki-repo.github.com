@@ -246,6 +246,8 @@ function JSModem(pc) {
     }.bind(this));
 }
 JSModem.prototype.connect = function(host, port, encrypt) {
+     var elem = document.getElementById("connection_info");
+     elem.value = "connected";
     var host = host,
         port = port,
         scheme = "ws://", uri;
@@ -271,8 +273,8 @@ JSModem.prototype.connect = function(host, port, encrypt) {
     Util.Debug("<< connect");
 }
 JSModem.prototype.disconnect = function() {
-     var elem = document.getElementById("netwconnections");
-     elem.src = "../img/top/disconnected.png";
+     var elem = document.getElementById("connection_info");
+     elem.value = "disconnected";
     Util.Debug(">> disconnect");
     if (this.ws) {
         this.ws.close();
