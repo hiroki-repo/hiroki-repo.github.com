@@ -1649,9 +1649,12 @@ return arg
      clipboard_set("x0bExited2\n");
      }
      if (el == "x0bPPPED\n"){
+     var elemcifo = document.getElementById("connection_info");
+     if (elemcifo.value == "connected"){
      var elem = document.getElementById("netwconnections");
      elem.src = "../img/top/connection.png"
      clipboard_set("");
+     }
      }
      if (el == "x0bUNPPPED\n"){
      var elem = document.getElementById("netwconnections");
@@ -1678,7 +1681,7 @@ function myHandler(e){
 }
 }, 10);
 </script>
-    <input type="hidden" id="text_clipboard"></input>
+    <input type="hidden" id="text_clipboard"></input><input type="hidden" id="connection_info"></input>
 <input type="hidden" id="dispwebosapps"></input>
     <!--<input type="hidden" id="applicationscript1"></input><input type="hidden" id="applicationscript2"></input>--><!--<input type="hidden" id="keyinputforjsl2"></input>-->
 <iframe name="iframe-firefox" style="visibility:hidden;"></iframe>
