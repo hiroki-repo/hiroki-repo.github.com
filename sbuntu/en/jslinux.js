@@ -53,6 +53,15 @@ function keyinputforjsl()
     el.value="";
 }
 
+function keyinputforjsl_ud()
+{
+    var el;
+    el = document.getElementById("keyinputforjsl2");
+    return el.value;
+    //term_handler(el.value);
+    //el.value="";
+}
+
 function dspwo_get()
 {
     var el;
