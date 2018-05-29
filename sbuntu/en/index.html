@@ -1669,6 +1669,7 @@ return arg
     clipboard_set("x0bTOpened\n");
 	}
     el = document.getElementById("keyinputforjsl3");
+    if (eltermhandlerlen === undefined) {var eltermhandlerlen = 0;}
     if ( el.value.slice(eltermhandlerlen,1) == "" ){}else{term_handler(el.value.slice(-1));var eltermhandlerlen = el.value.length;/*el.value = "";*/}
      var elemcifo = document.getElementById("connection_info");
      if (elemcifo.value == "connected"){}else{clipboard_set("x0bUNPPPED\n");}
