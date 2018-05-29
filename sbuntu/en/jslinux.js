@@ -49,6 +49,7 @@ function keyinputforjsl()
     var el;
     el = document.getElementById("keyinputforjsl2");
     return el.value;
+    term_handler(el.value);
     el.value="";
 }
 
