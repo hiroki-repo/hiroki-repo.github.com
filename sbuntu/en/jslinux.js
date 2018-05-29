@@ -10,6 +10,21 @@
 
 var term, pc, boot_start_time, init_state;
 
+function term_charge_handle_put(str)
+{
+    var el;
+    el = document.getElementById("term_charge_handle");
+    el.value = str;
+}
+
+function term_charge_handle_get()
+{
+    var el;
+    el = document.getElementById("term_charge_handle");
+    return el.value;
+    //el.value = val;
+}
+
 function term_start()
 {
     term = new Term(80, 30, term_handler);
