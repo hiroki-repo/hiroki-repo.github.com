@@ -12,7 +12,7 @@ var term, pc, boot_start_time, init_state;
 
 function term_start()
 {
-    term = new Term(68, 32, term_handler);
+    term = new Term(68, 33, term_handler);
 
     term.open();
 }
