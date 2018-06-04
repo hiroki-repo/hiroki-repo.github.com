@@ -1,0 +1,60 @@
+<head>
+<title>Javascript PC Emulator</title>
+<style>
+.term {
+    font-family: courier,fixed,swiss,monospace,sans-serif;
+    font-size: 14px;
+    color: #f0f0f0;
+    background: #000000;
+}
+
+.termReverse {
+    color: #000000;
+    background: #00ff00;
+}
+#note {
+    font-size: 12px;
+}
+#copyright {
+    font-size: 10px;
+}
+#clipboard {
+    font-size: 12px;
+}
+</style><style>
+    background: #000000;
+</style>
+<script src="utils.js" type="text/javascript"></script>
+<script src="term.js" type="text/javascript"></script>
+<script src="cpux86.js" type="text/javascript"></script>
+<script src="cpux86-ta.js" type="text/javascript"></script>
+<script src="jsmodem.js" type="text/javascript"></script>
+</head>
+<body onload="start()" bgcolor="#000000">
+<table border="0">
+<table border="0">
+<tr valign="top"><td>
+<script type="text/javascript" src="jslinux.js"></script>
+<td>
+<input id="text_clipboard" type="hidden"></input>
+</table>
+</body>
+<SCRIPT LANGUAGE="JavaScript" SRC="jsuix_support/jsuix_gui.js" TYPE="text/javascript"></SCRIPT>
+<DIV ID="termKbdDiv" STYLE="margin-left : -10px;margin-top : -0px;/*position:absolute;*/ top:290; left:100%;visibility:hidden"></DIV>
+<script type="text/javascript">
+//var conf_term_x=102;
+//var conf_kbd_offset=46;
+function keyHandler(e){
+//alert(e.which);
+/*var key1 = "";
+const constedata = JSON.parse(e);
+var value1 = constedata.which;*/
+var e2 = e.which;
+console.log(e2);
+term_handler(String.fromCharCode(e2));
+};
+var conf_rows=24;
+var conf_rowheigt=15;
+termKbdShow();
+</script>
+</body>
