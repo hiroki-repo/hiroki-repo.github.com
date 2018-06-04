@@ -17,6 +17,17 @@ function term_start()
     term.open();
 }
 
+function urloptget()
+{
+var arg = new Object;
+var pair=location.search.substring(1).split('&');
+for(var i=0;pair[i];i++) {
+    var kv = pair[i].split('=');
+    arg[kv[0]]=kv[1];
+}
+return arg
+}
+
 /* send chars to the serial port */
 function term_handler(str)
 {
@@ -85,7 +96,10 @@ function start()
      *    redirected on the server-side).
      */
     var modem = new JSModem(pc);
-    modem.connect('localhost', 2080);
+    //modem.connect('localhost', 2080);
+    if (urloptdata.ssled == "1"){
+    if ((urloptdata.relay)){modem.connect(urloptdata.relay, 2080, 1);}else{modem.connect('localhost', 2080, 1);}}else{
+    if ((urloptdata.relay)){modem.connect(urloptdata.relay, 2080);}else{modem.connect('localhost', 2080);}}
     
     pc.load_binary("vmlinux-2.6.20.bin", 0x00100000, start2);
 }
