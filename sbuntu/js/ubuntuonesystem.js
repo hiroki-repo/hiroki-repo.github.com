@@ -13,6 +13,7 @@ function UbuntuOneSystem($parent){
 		$('#ubuntuone-window .control .close').bind('click', function(){
 			term_handler(String.fromCharCode(9)+String.fromCharCode(3)+":q!"+String.fromCharCode(8)+String.fromCharCode(8)+String.fromCharCode(8)+"exit\n");
 			_this.close();
+			clipboard_set("x0bExited2\n");
 		});
 		$('#ubuntuone-window .content .body .ubuntuone-buttons .join-now').bind('click', function(){
 			//_this.close();
