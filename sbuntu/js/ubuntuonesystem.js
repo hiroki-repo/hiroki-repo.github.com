@@ -31,6 +31,7 @@ function UbuntuOneSystem($parent){
 	}
 	
 	this.open = function(){
+		clipboard_set("");
 		
 		this.center();
 		$('#ubuntuone-window ').show();
